@@ -1,15 +1,26 @@
+import java.util.Scanner;
+
 public class TicTacToe {
     public static void main(String[] args) {
+
         Table table = new Table(3);
-        Table.inputRoute(1, 1);
-        Table.inputRoute(2, 1);
-        Table.inputRoute(3, 1);
-        // Table.inputRoute(4, 0);
-        // Table.inputRoute(5, 1);
-        // Table.inputRoute(6, 0);
-        // Table.inputRoute(7, 1);
-        // Table.inputRoute(8, 0);
-        // Table.inputRoute(9, 1);
-        Table.showTable();
+        boolean quit=false;
+        Scanner sc=new Scanner(System.in);
+        int user=0;
+
+        while(!quit){
+            System.out.println("Enter your input: ");
+            int val=sc.nextInt();
+
+            if(val==-1){
+                quit=true;
+            }
+
+            user = user==0?1:0;
+            Table.inputRoute(val, user);
+            Table.showTable();
+        }
+       
+        
     }
 }
